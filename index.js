@@ -6,12 +6,6 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const corsOptions = {
-    origin: 'http://localhost:3000', // Allow requests only from this origin
-};
-
-app.use(cors(corsOptions));
-
 app.get("/", (req, res) => {
     res.send("Welcome to the Server!"); // Send a welcome message
 });
