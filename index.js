@@ -3,6 +3,18 @@ const collection = require("./mongo");
 const cors = require("cors");
 const app = express();
 
+const corsOptions = {
+    origin: "https://aig-frontend-one.vercel.app", // Your frontend domain
+    methods: ["GET", "POST", "OPTIONS"], // Allow necessary methods
+    allowedHeaders: ["Content-Type", "Authorization"], // Allow required headers
+    credentials: true, // Include credentials if needed
+};
+
+app.use(cors(corsOptions));
+
+// Explicitly handle preflight requests
+app.options("*", cors(corsOptions));
+
 // Allow requests from all origins
 app.use(cors({
     origin: '*', // This allows requests from any origin
