@@ -6,11 +6,6 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cors())
 
-app.get("/",cors(),(req,res)=>{
-
-})
-
-
 app.post("/",async(req,res)=>{
     const{email,password}=req.body
 
@@ -18,7 +13,7 @@ app.post("/",async(req,res)=>{
         const check=await collection.findOne({email:email})
 
         if(check){
-            res.json("exist")
+            res.json("exist....")
         }
         else{
             res.json("notexist")
@@ -61,5 +56,6 @@ app.post("/signup",async(req,res)=>{
 
 app.listen(8000,()=>{
     console.log("port connected");
+    return "ok"
 })
 

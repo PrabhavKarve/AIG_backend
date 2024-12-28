@@ -12,6 +12,10 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
+app.get("/", (req, res) => {
+    res.send("Welcome to the Server!"); // Send a welcome message
+});
+
 /* LOGIN section */
 app.post("/login", async (req, res) => {
     const { email, password } = req.body;
@@ -61,4 +65,5 @@ app.post("/signup", async (req, res) => {
 
 app.listen(8000, () => {
     console.log("Server is running on port 8000");
+    return "Server is running on port 8000"
 });
