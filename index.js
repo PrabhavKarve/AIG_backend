@@ -4,19 +4,17 @@ const cors = require("cors");
 const app = express();
 
 const corsOptions = {
-    origin: "*" // Your frontend domain
+    origin: "https://aig-frontend-one.vercel.app", // Your frontend domain
+    methods: ["GET", "POST", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"], // Allow required headers
+    credentials: true, // Include cookies or authorization headers if needed
 };
 
+// Apply CORS middleware
 app.use(cors(corsOptions));
 
-/*
-// Explicitly handle preflight requests
+// Explicitly handle OPTIONS requests
 app.options("*", cors(corsOptions));
-
-// Allow requests from all origins
-app.use(cors({
-    origin: '*', // This allows requests from any origin
-}));*/
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
