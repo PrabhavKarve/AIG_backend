@@ -3,11 +3,7 @@ const collection = require("./mongo");
 const cors = require("cors");
 const app = express();
 
-const corsOptions = {
-    origin: "*" // Your frontend domain
-};
 
-app.use(cors(corsOptions));
 
 /*
 // Explicitly handle preflight requests
