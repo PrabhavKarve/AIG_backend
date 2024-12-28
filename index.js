@@ -4,9 +4,7 @@ const cors = require("cors");
 const app = express();
 
 const corsOptions = {
-    origin: "*", // Your frontend domain
-    methods: ["GET", "POST", "OPTIONS"], // Allow necessary methods
-    allowedHeaders: ["Content-Type", "Authorization"], // Allow required headers
+    origin: "*" // Your frontend domain
 };
 
 app.use(cors(corsOptions));
